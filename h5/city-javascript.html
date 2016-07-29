@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>City selector</title>
+  <script>
+    var datas = {
+      provinces: {
+        1: "江苏",
+        2: "浙江"
+      },
+      citys: {
+        1: ["南京", "苏州", "无锡", "常州"],
+        2: ["杭州", "嘉兴", "湖州", "绍兴"]
+      },
+      current: function(province){
+        return this.citys[province];
+      }
+    };
+
+    window.onload = function(){
+      var pro_selector = document.getElementById("province");
+      var city_selector = document.getElementById("city");
+      for (index in datas.provinces) {
+        pro_selector.add(new Option(datas.provinces[index], index));
+      }
+      pro_selector.onchange = function(){
+        current_province = pro_selector.options[pro_selector.selectedIndex].value;
+        var length = city_selector.options.length;
+        for (var i = 0; i < length; i++) {
+          city_selector.remove(city_selector.i);
+        }
+        var cities = datas.current(current_province);
+        for (index in cities) {
+          city_selector.add(new Option(cities[index], index));
+        }
+        if (pro_selector.selectedIndex > 0) {
+          city_selector.style.display = "inline";
+        } else {
+          city_selector.style.display = "none";
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+
+<select name="province" id="province">
+  <option value="0">Please select province</option>
+</select>
+<select name="city" id="city" style="display: none;">
+
+</select>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="../js/jquery-3.0.0.js"></script>
+  <script src="../js/jquery.md5.js"></script>
+</head>
+<body>
+<script>
+  $(function(){
+    var timestamp = 1469700008;
+    var base64String = "iVBORw0KGgoAAAANSUhEUgAAAQwAAAAiCAYAAACqXedhAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4RpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpkZTg5MWIxYy00NTZmLThlNDUtOWUzNS0zNzAwOGU2NTY2NGMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzA5ODk0QTc0MjhEMTFFNkJGRkVGRTk0QzVBQzdGRTgiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzA5ODk0QTY0MjhEMTFFNkJGRkVGRTk0QzVBQzdGRTgiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6YWM2MDc5MGEtZWY1MC04NTQ1LTk1Y2ItMTk0Nzg0NjE2Y2NiIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6ZmMwNDhlOTMtMzY5MC0xMWU2LWIxZjct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";
+    var imageFormat = 2;
+    var md5string = "AppId=10001&MethodName=UPLOADIMAGEBASE64&IMAGECATEGORY=30&IMAGEFORMAT=" + imageFormat + "&" + "IMAGESTRING=" + base64String + "&ClientSecret=XoxTJAkcS0TbXWdj2w0rFerozQ9xX3zW&Timestamp=" + timestamp;
+    md5String = $.md5(md5string);
+    var body = {
+      "UserId":0,
+      "ImageString":base64String,
+      "ThumbWidth":0,
+      "ThumbHeight":0,
+      "ImageFormat":imageFormat,
+      "ImageCategory":30
+    };
+    var head = {
+      "auth":"zh-cn",
+      "channel":"Android_MCF2",
+      "clientIP":"",
+      "md5":md5String,
+      "sessionId":"",
+      "timestamp":timestamp,
+      "version":"3.0.0"
+    };
+
+    $.ajax({
+      url: "http://t-app.svc.mc.cc/json/UpLoadImageBase64",
+      type: "post",
+      headers: {"Content-Type": "application/json;charset=UTF-8"},
+      data: JSON.stringify({"requestHead": head, "body": body}),
+      dateType: "json"
+    }).done(function(data){
+      console.log(data);
+    }).fail(function(){
+      console.log("-----");
+    });
+  });
+
+
+</script>
+</body>
+</html>

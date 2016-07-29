@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    Object.beget = function(o){
+      var F = function(o){};
+      F.prototype = o;
+      return new F;
+    };
+    var Cat = {
+      name: "",
+      saying: "meow"
+    };
+    var myCat = Object.beget(Cat);
+    myCat.name = "ketty";
+    console.log(myCat);
+
+    var name = "The Window";
+    var object = {
+      name : "My Object",
+      getNameFunc : function(){
+        var c = 999;
+        var that = this;
+
+        add = function(){c = c + 1;};
+        return function(){
+          console.log(c);
+          console.log(that.name);
+          console.log(this.name);
+          return "ok";
+        };
+      }
+    };
+//    object.getNameFunc()();
+    var result = object.getNameFunc();
+    result();
+    add();
+    result();
+    object.getNameFunc()();
+
+    var Animal = function(){
+      this.test = function(){
+        console.log("==============");
+      };
+    };
+    Animal.prototype.species = "animal";
+    Animal.prototype.test = function(){
+      console.log("---------------");
+    };
+
+    var Cat = function(name, color){
+      this.name = name;
+      this.color = color;
+    };
+
+    Cat.prototype = new Animal();
+    Cat.prototype.constructor = Cat;
+    var cat1 = new Cat("Ketty", "yellow");
+    console.log(cat1.species);
+    console.log(Cat.prototype.constructor == Animal);
+    console.log(cat1.constructor == Cat);
+    cat1.test();
+
+    var F = function(){};
+    F.prototype = Animal.prototype;
+    Cat.prototype = new F();
+    Cat.prototype.constructor = Cat;
+
+    var cat2 = new Cat("Mini", "black");
+    console.log(cat2.species);
+    console.log(cat2.constructor == Cat);
+    cat2.test();
+
+    var extend = function(Child, Parent){
+      var F = function(){};
+      F.prototype = Parent.prototype;
+      Child.prototype = new F();
+      Child.prototype.constructor = Child;
+    };
+    extend(Cat, Animal);
+    var cat3 = new Cat("Tuple", "Flower");
+    cat3.test();
+
+    var extendCopy = function(Child, Parent){
+      var p = Parent.prototype;
+      var c = Child.prototype;
+      for(var i in p){
+        c[i] = p[i];
+      }
+    };
+    extendCopy(Cat, Animal);
+    var cat4 = new Cat("T", "white");
+    console.log(cat4.species);
+    cat4.test();
+    var Chinese = {
+      "nation": "China",
+      "address": ["Beijing", "Shanghai"]
+    };
+
+    var Doctor = Object.beget(Chinese);
+    Doctor.career = "Doctor";
+    console.log(Doctor);
+
+    var deepCopy = function(p, c){
+      var c = c || {};
+      for(var i in p){
+        if(typeof p[i] === 'object'){
+          c[i] = (p[i].constructor === Array) ? [] : {};
+          deepCopy(p[i], c[i]);
+        }else{
+          c[i] = p[i];
+        }
+      }
+      return c;
+    };
+
+    var Doctor = deepCopy(Chinese);
+    Doctor.career = "Doctor";
+    console.log(Doctor);
+    Doctor.address.push("Hangzhou");
+    console.log(Chinese.address);
+
+    console.log("%d年%d月", 2016, 7);
+    console.dir(Doctor);
+    console.dirxml(Doctor);
+    function add(a,b){
+      console.trace();
+      return a+b;
+    }
+    var x = add3(1,1);
+    function add3(a,b){return add2(a,b);}
+    function add2(a,b){return add1(a,b);}
+    function add1(a,b){return add(a,b);}
+
+    if ( myObj === undefined){
+      var myObj = {};
+    }
+
+    Number.prototype = Object.defineProperty(
+        Number.prototype, "double", {
+          get: function (){return (this + this);}
+        }
+    );
+    Number.prototype = Object.defineProperty(
+        Number.prototype, "square", {
+          get: function (){return (this * this);}
+        }
+    );
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
