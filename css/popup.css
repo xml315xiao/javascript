@@ -1,0 +1,129 @@
+/* CSS Document */
+
+	@font-face{
+		font-family: "FZLTXHK";
+		src:url('../font/方正兰亭纤黑.TTF') format('truetype');
+		font-weight:normal;
+		font-style:normal;
+		}
+	@font-face{
+		font-family: "FZLTHJW";
+		src:url('../font/方正兰亭黑简.TTF') format('truetype');
+		font-weight:normal;
+		font-style:normal;
+		}
+	@font-face{
+		font-family: "FZLTCHK";
+		src:url('../font/方正兰亭粗黑.TTF') format('truetype');
+		font-weight:normal;
+		font-style:normal;
+		}
+	.main{
+		width:100%;
+		height:100%;
+		z-index:99999;
+		position:fixed;
+		top:0;
+		left:0;
+		opacity:0.7;
+		filter: alpha(opacity=70);
+		background:#000;
+		}
+	.popup{
+		width:690px;
+		height:532px;
+		position:fixed;
+		top:150px;
+		left:50%;
+		margin-left:-345px;
+		overflow:hidden;
+		background:red;
+		z-index:999999;
+		}
+	.popup-header{
+		width:100%;
+		height:90px;
+		background:#02458c;
+		border-bottom:3px solid #00a0e9;
+		}
+	.popup-header>p{
+		font-size: 24px;
+		font-family: "FZLTXHK";
+		color: white;
+		text-indent:30px;
+		line-height:122px;
+		letter-spacing:2px;
+		}
+	.popup-content{
+		width:100%;
+		height:439px;
+		overflow:hidden;
+		background:white;
+		}
+	.popup-detail{
+		height:402px;
+		margin:29px auto 0px auto;
+		width:635px;
+		overflow:hidden;
+		}
+	.popup-detail>p{
+		font-size: 14px;
+		font-family: "FZLTHJW";
+		color:#666666;
+		line-height:1.643;
+		letter-spacing:1.4px;
+		margin-top:8px;
+		}
+	.know{
+		width:223px;
+		height:38px;
+		margin:48px auto 20px auto;
+		background:url(../images/agree-bg.png) no-repeat;
+		overflow:hidden;
+		}
+	.know button{
+		width:223px;
+		height:38px;
+		background:none;
+		border:none;
+		line-height:38px;
+		text-align:center;
+		font-size: 18px;
+		font-family: "FZLTXHK";
+		color:white;
+		letter-spacing:2px;
+		cursor:pointer;
+		}
+	.remember{
+		width:170px;
+		height:20px;
+		margin:23px auto;
+		overflow:hidden;
+		}
+	.checked{
+		width:14px;
+		height:14px;
+		border:1px solid #bfbfbf;
+		margin-top:2px;
+		float:left;
+		border-radius:2px;
+		}
+	.checked>input{
+		width:15px;
+		height:15px;
+		cursor:pointer;
+		opacity:0;
+		filter: alpha(opacity=0);
+		}
+	.remember-p{
+		/*float:left;*/
+		font-size: 14px;
+		font-family: "FZLTXHK";
+		color:#666666;
+		margin-left:10px;
+		line-height:20px;
+		letter-spacing:1px;
+		}
+	.gou{
+		background:url(../images/gou.png) 1px no-repeat;
+		}
