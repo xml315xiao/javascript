@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>设计优雅的数据表格</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <style>
+    h1 {
+      font-size: 16px;
+    }
+    table {
+      width: 100%;
+      font-size: 12px;
+      table-layout: fixed;
+      empty-cells: show;
+      border-collapse:collapse;
+      margin: 0 auto;
+      border: 1px solid #cad9ea;
+      color: #666666;
+    }
+    th {
+      /*background-image: url(../images/agree-bg.png);*/
+      /*background-repeat: repeat-x;*/
+      height: 30px;
+      overflow: hidden;
+    }
+    td {
+      height: 20px;
+    }
+    td, th {
+      border: 1px solid #cad9ea;
+      padding: 0 1em 0;
+    }
+    tr:nth-child(even) {
+      background-color: #f5fafe;
+    }
+
+    dl {
+      position: relative;
+      width: 778px;
+      height: 612px;
+      background: #6f7c82 no-repeat left top;
+      margin: 0 auto;
+    }
+    dt {
+      position: absolute;
+      color: red;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    dt:nth-of-type(1) {
+      left: 392px;
+      top: 370px;
+      z-index: 1001;
+    }
+    dt:nth-of-type(2) {
+      left: 344px;
+      top: 320px;
+      z-index: 101;
+    }
+    dt:nth-of-type(3) {
+      left: 408px;
+      top: 320px;
+      z-index: 101;
+    }
+    dt:nth-of-type(4) {
+      left: 310px;
+      top: 270px;
+      z-index: 11;
+    }
+    dt:nth-of-type(5) {
+      left: 360px;
+      top: 270px;
+      z-index: 11;
+    }
+    dt:nth-of-type(6) {
+      left: 415px;
+      top: 270px;
+      z-index: 11;
+    }
+    dt:nth-of-type(7) {
+      left: 274px;
+      top: 220px;
+      z-index: 1;
+    }
+    dt:nth-of-type(8) {
+      left: 324px;
+      top: 220px;
+      z-index: 1;
+    }
+    dt:nth-of-type(9) {
+      left: 374px;
+      top: 220px;
+      z-index: 1;
+    }
+    dt:nth-of-type(10) {
+      left: 420px;
+      top: 220px;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+<h1>设计优雅的数据表格</h1>
+<table>
+  <tr>
+    <th>排名</th>
+    <th>校名</th>
+    <th>总得分</th>
+    <th>人才培养总得分</th>
+    <th>研究生培养得分</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>清华大学</td>
+    <td>296.77</td>
+    <td>128.92</td>
+    <td>93.83</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>清华大学</td>
+    <td>296.77</td>
+    <td>128.92</td>
+    <td>93.83</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>清华大学</td>
+    <td>296.77</td>
+    <td>128.92</td>
+    <td>93.83</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>清华大学</td>
+    <td>296.77</td>
+    <td>128.92</td>
+    <td>93.83</td>
+  </tr>
+</table>
+
+<h1>CSS 大战保龄球</h1>
+<dl>
+  <dt>1</dt>
+  <dd></dd>
+  <dt>2</dt>
+  <dd></dd>
+  <dt>3</dt>
+  <dd></dd>
+  <dt>4</dt>
+  <dd></dd>
+  <dt>5</dt>
+  <dd></dd>
+  <dt>6</dt>
+  <dd></dd>
+  <dt>7</dt>
+  <dd></dd>
+  <dt>8</dt>
+  <dd></dd>
+  <dt>9</dt>
+  <dd></dd>
+  <dt>10</dt>
+  <dd></dd>
+
+</dl>
+
+</body>
+</html>
