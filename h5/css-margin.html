@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .test {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+            margin: 0px auto;
+        }
+
+        .inner {
+            border: 1px solid #00a0e9;
+            margin: 50px;
+            /*width: 200px;*/
+            height: 200px;
+            background: #00a0e9;
+        }
+        .box {
+            background-color: olive;
+            overflow: hidden;
+        }
+        .box > div {
+            margin: 50%;
+        }
+    </style>
+</head>
+<body>
+<pre>
+    margin 改变可视尺寸（水平方向标准尺寸）
+    1. 只适用于水平方向尺寸
+    2. 没有设定width/height的普通block水平元素
+    3. float元素 absolute/fixed 元素 inline水平 table-cell 元素
+
+    应用： 实现两栏自适应布局（margin-left）
+
+    margin 改变占据尺寸
+    应用： 实现上下旁白
+
+    margin百分比单位：
+    都是相对于水平方向宽度计算
+    绝对定位margin百分比是相对于祖先计算的
+    应用：实现宽高2:1自适应矩形
+
+
+</pre>
+
+<div class="test">
+    <div class="inner"></div>
+</div>
+<div class="box">
+    <div></div>
+</div>
+</body>
+</html>
