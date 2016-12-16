@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>CSS Drawing</title>
+    <link rel="stylesheet" href="./css/css-icons.css">
 </head>
 <body>
     <!--使用padding 百分比绘制正方形(padding 百分比相对水平方向计算)-->
-    <div style="width: 0; height: 0; padding: 5%; background: grey;"></div>
+    <!--<div style="width: 0; height: 0; padding: 5%; background: grey;"></div>-->
     <!--使用margin 百分比绘制2:1自适应矩形( margin 百分比相对水平方向计算 )-->
-    <div style="background-color: olive; overflow: hidden;"><div style="margin: 50%;"></div></div><br>
+    <!--
+        <div style="background-color: olive; overflow: hidden;"><div style="margin: 50%;"></div></div><br>
+     -->
     <!--使用padding 绘制高度可控分割线( 对于inline元素，水平padding影响尺寸， 垂直padding不影响尺寸，但影响background效应 )-->
-    登录<span style="padding: 13px 6px 1px; margin-left: 12px; border-left: 2px solid; font-size: 0;"></span>注册
+    <!--
+        登录<span style="padding: 13px 6px 1px; margin-left: 12px; border-left: 2px solid; font-size: 0;"></span>注册
+     -->
     <!--使用padding与background-clip绘制三条杠-->
     <div style="width: 50px; height: 12px; padding: 5px 0; border-top: 12px solid red; background-color: red; border-bottom: 12px solid; background-clip: content-box;"></div>
     <!--使用padding与background-clip绘制同心圆(备注：改变border-radius可以调整图形)-->
@@ -19,8 +24,9 @@
     <div style="width: 25px; height: 4px; border-top: 14px double black; border-bottom: 5px solid currentColor;"></div>
     <!--使用border描绘三角形、梯形、圆角形-->
     <div style="width: 0; height: 0; border: 30px solid; border-color: red green transparent transparent;"></div>
-    <div style="width: 0; height: 0; border: 8px solid; border-color: #cccccc transparent transparent transparent;"></div>
     <!--使用border透明边框绘制倒三角-->
+    <div style="width: 0; height: 0; border: 8px solid; border-color: #cccccc transparent transparent transparent;"></div>
+
     <div style="width: 50px; height: 0; border: 30px solid; border-color: transparent transparent grey transparent;"></div><br>
     <div style="width: 200px; height: 0; border: 1px solid; border-color: #dddddd transparent grey transparent;"></div>
     <div style="width: 202px; height: 22px; background-color: red; padding: 5px 0; background-clip: content-box;"></div>
@@ -31,8 +37,79 @@
      background-color: #fff; background-clip: content-box; color: #d0d0d5;width: 16px; height: 16px;"></div>
 
     <div class="box" style="border-left: 100px solid #222222;">
-        <nav class="left" style="width: 100px; margin-left: -100px; float: left;"><h3>导航</h3></nav>
-        <section><div class="module" style="width: 200px; background-color: grey;">模块</div></section>
+        <nav class="left" style="width: 100px; margin-left: -100px; float: left; text-align: center;"><h3 style="display: inline; color: #ffffff; font-size: 14px;">导航</h3></nav>
+        <section><div class="module" style="width: 200px; background-color: grey; text-align: center;">模块</div></section>
     </div>
+
+    <!--200 CSS Icons-->
+    <div class="icons">
+        <span class="icon-next"></span>
+        <div style="border: 10px solid; border-color: transparent transparent transparent currentColor;"></div>
+        <span class="icon-parse"></span>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Material Framework is an easy to user Material Design Frawork for the web.">
+    <meta charset="UTF-8">
+    <title>Material Framework</title>
+    <link rel="stylesheet" href="./css/material.css">
+    <link rel="stylesheet" href="./css/google-fonts.css">
+    <style>
+        *[red] {
+            border: 1px solid red;
+        }
+        div[blue] {
+            border: 1px solid blue;
+            background: #d4d4d4;
+        }
+        *[green] {
+            height: 10%;
+            border: 1px solid green;
+            background-color: green;
+        }
+
+        #navigation-sidemenu {
+            max-width: 22em;
+        }
+        #navigation-sidemenu .sidemenu-hero {
+            height: 70px;
+        }
+        #navigation-sidemenu .sidemenu-hero-image {
+            margin-top: -100px;
+        }
+        #navigation-sidemenu .sidemenu-hero h1 {
+            font-size: 25px;
+            margin-top: 10px;
+        }
+        #switch-container {
+            margin-top: 14px;
+            margin-right: 100px;
+        }
+        #external-fab-container {
+            position: absolute;
+            right: 20px;
+            top: 25px;
+        }
+        .header {
+            margin: 0;
+            height: auto;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 998;
+        }
+        .navigation-section {
+            background-color: inherit;
+        }
+        .navigation-section:not(:target) {
+            display: none;
+        }
+        .button {
+            margin: 10px;
+        }
+        code {
+            white-space: pre-wrap;
+            tab-size: 4;
+        }
+        p > code {
+            padding: 0 0.5em;
+            color: #E91E63;
+        }
+    </style>
+</head>
+<body class="desktop">
+    <div class="sidemenu sidebar responsive" id="navigation-sidemenu">
+        <div class="sidemenu-hero">
+            <img src="http://nt1m.github.io/material-framework/demo-files/sidemenu-hero.jpg" class="sidemenu-hero-image">
+            <h1 class="title serif">Material Framework</h1>
+        </div>
+        <ul class="menu">
+            <li ripple><a href="#introduction"><i class="icon-info-outline"></i>Introduction</a></li>
+            <li class="divider"></li>
+            <h2 class="subheading">Components</h2>
+            <li ripple><a href="#color"><i class="icon-palette"></i>Colors</a></li>
+            <li ripple><a href="#ripple"><i class="icon-blur-on"></i>Ripple</a></li>
+            <li ripple><a href="#typography"><i class="icon-subject"></i>Typography</a></li>
+            <li class="divider"></li>
+            <li ripple><a href="#toggles"><i class="icon-check-circle-outline"></i>Toggles</a></li>
+            <li ripple><a href="#buttons"><i class="icon-pageview"></i>Buttons</a></li>
+            <li ripple><a href="#inputs"><i class="icon-input"></i>Inputs</a></li>
+            <li ripple><a href="#icons"><i class="icon-bookmark-outline"></i>Icons</a></li>
+            <li ripple><a href="#toolbars"><i class="icon-drive-site"></i>Toolbars</a></li>
+            <li ripple><a href="#popups"><i class="icon-notifications-none"></i>Popups</a></li>
+            <li ripple><a href="#lists"><i class="icon-list"></i>Lists</a></li>
+            <li ripple><a href="#menus"><i class="icon-menu"></i>Menus</a></li>
+            <li ripple><a href="#cards"><i class="icon-content-copy"></i>Cards</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+
+        <div class="toolbar bg-blue-500 color-white header">
+            <button class="icon-button" onclick="document.getElementById('navigation-sidemenu').hidden = !document.getElementById('navigation-sidemenu').hidden;"><i class="icon-menu"></i></button>
+            <span class="toolbar-label">Material framework</span>
+            <span class="float-right">
+                <div class="switch" id="switch-container">
+                    <input type="checkbox" name="" id="dark-theme-switch">
+                    <label for="dark-theme-switch"></label>
+                    <label class="form-control-label">Dark</label>
+                </div>
+            </span>
+            <span class="float-right" id="external-fab-container">
+                <a class="fab"><i class="icon-launch"></i></a>
+            </span>
+        </div>
+        <div class="navigation-section" id="introduction">
+            <div class="section">
+                <h1>Introduction</h1>
+                <h2>What is this ?</h2>
+                <p>Material Framework is a simple responsive CSS framework made by <a>Tim Nguyen</a> that allows you to integrate <a>Material Design</a> in any web page or web app.</p>
+                <p>© Copyright 2014-2015 - Tim Nguyen</p>
+                <h2>Where do I get it ?</h2>
+                <p>You can find it on Github. Grab it now before your internet gets slow :)</p>
+                <a href="" class="button raised color-black"><i class="icon-visibility"></i>View on Github</a>
+                <a href="" class="button raised bg-blue-500 color-white"><i class="icon-file-download"></i>Download</a>
+                <h2>Setup</h2>
+                <p>Just import material css if you only need the styles. If you need the JS, you'll also need to import material.js, then you'll need to initialize the Material object. Luckily, that can be done using a simple line of code.</p>
+
+                <code>
+// This will initialize all Material modules
+var md = new Material();
+                </code>
+                <p>Or if you only need specific modules:</p>
+                <code>
+// This will initialize only the Responsive and SideMenu modules
+var md = new Material({modules: ["Responsive", "SideMenu"]});
+                </code>
+                <p>You can also specify options:</p>
+                <code>
+var md = new Material({
+    options: {
+        FancyHeader: {
+            header: document.querySelector(".toolbar");
+            scrollTarget: document.querySelector(".main-content");
+        }
+    }
+});
+                </code>
+            </div>
+            <div class="section">
+                <h1>Showcase</h1>
+                <p>Cool apps made using the framework:</p>
+                <ul>
+                    <li><a href="">Scratchpad</a> by <a href="">PalmerAL</a></li>
+                    <li><a href="">Material Flat UI Colors</a></li>
+                    <li><a href="">YouTube downloader</a> by <a href="">Simobortolo</a></li>
+                </ul>
+                <p>Feel free to <a href="">reach me</a> if you wish to have your app featured.</p>
+            </div>
+        </div>
+        <div class="navigation-section" id="color">
+            <div class="section">
+                <h1>Themes</h1>
+                <p>Two themes are available: the dark theme and the light theme.</p>
+                <p>To apply the dark theme, user <code>dark-theme</code> class.</p>
+                <p>Helpers are also available in <code>material.js</code>.</p>
+                <code>Theme.toggle(element)</code>
+                <p>This toggles between light and dark theme. <code>element</code> corresponds to the DOM element that will have it's theme toggled. If no element is specified,this defaults to <code>document.body</code>.</p>
+                <code>Theme.setTheme(theme, element)</code>
+                <p>This sets an element to a specified theme. theme corresonds to the theme you want to switch to (light or dark), this is required. <code>element</code> corresponds to the DOM element that will have it's theme changed. If no element is specified, this defaults to <code>document.body</code>.</p>
+            </div>
+            <div class="section">
+                <h1>Colors</h1>
+                <p>This framework provides access to all material design colors. Here's how you can use them:</p>
+                <p>Class names are composed like this: <code>type</code> - <code>color</code> - <code>shade</code></p>
+                <p><code>type</code> corresponds to one of the 4 different types( <code>bg</code>, <code>color</code>, <code>fill</code> or <code>stroke</code> )depending on your needs, <code>color</code> corresponds to the color name(red for example), and <code>shade</code> corresponds to number specified in the palette below(500 for example).</p>
+                <p>Note that you can alse use multiple classes together.</p>
+                <div class="divider"></div>
+                <h2>Example</h2>
+                <p>This class name will make the background of an element red.</p>
+                <code>
+bg-red-500
+                </code>
+                <div class="divider"></div>
+                <h2>Palette</h2>
+            </div>
+        </div>
+        <div class="navigation-section" id="ripple">
+
+        </div>
+    </div>
+</body>
+<script src="./js/material.js"></script>
+<script>
+    window.addEventListener("DOMContentLoaded", function(){
+        var material = new Material();
+        if (window.location.hash === "" || document.querySelector(".navigation-section " + window.location.hash) === null) {
+            window.location.hash = "#introduction";
+        }
+        document.querySelector("#navigation-sidemenu a[href='" + window.location.hash + "']").parentNode.className = "selected color-blue-500";
+
+        var sidemenu = document.getElementById("navigation-sidemenu"),
+            sidemenuItems = sidemenu.querySelectorAll(".menu > li:not(.divider) > a");
+        for(var i = 0, len = sidemenuItems.length; i < len; i++){
+            sidemenuItems[i].addEventListener("click", function(){
+                for(var j = 0, len = sidemenuItems.length; j < len; j++){
+                    sidemenuItems[j].parentNode.className = "";
+                }
+                this.parentNode.className = "selected color-blue-500";
+            });
+        }
+    });
+
+    // javascript for ?
+</script>
+</html>
