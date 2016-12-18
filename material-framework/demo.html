@@ -68,6 +68,10 @@
             padding: 0 0.5em;
             color: #E91E63;
         }
+        .section .checkbox, .section .radio, .section .switch,
+        .section > .fab{
+            margin: 10px;
+        }
     </style>
 </head>
 <body class="desktop">
@@ -96,7 +100,6 @@
         </ul>
     </div>
     <div class="main-content">
-
         <div class="toolbar bg-blue-500 color-white header">
             <button class="icon-button" onclick="document.getElementById('navigation-sidemenu').hidden = !document.getElementById('navigation-sidemenu').hidden;"><i class="icon-menu"></i></button>
             <span class="toolbar-label">Material framework</span>
@@ -184,7 +187,346 @@ bg-red-500
             </div>
         </div>
         <div class="navigation-section" id="ripple">
-
+            <div class="section">
+                <h1>Ripple</h1>
+                <p>You can use the ripple class or the ripple attribute. You can also specify circular ripples (for round elements like fabs). The <code>ripple</code> attribute supports 3 values : <code>circle</code>, <code>none</code> and <code>nothing</code>.</p>
+                <p>If you don't like the W3C validator screaming about non-valid attributes, you can use class names instead : <code>ripple</code>, <code>circle</code> and <code>no-ripple</code></p>
+                <h2>Example</h2>
+                <button class="button raised bg-blue-500 color-white" ripple="none">No ripple</button>
+                <button class="button raised bg-blue-500 color-white no-ripple">No ripple</button>
+                <div style="width: 100px;height: 100px;padding: 10px; border: 1px solid #333" ripple="circle">Circular ripple</div>
+                <div style="width: 100px;height: 100px;padding: 10px; border: 1px solid #333" class="ripple circle">Circular ripple</div>
+            </div>
+        </div>
+        <div class="navigation-section" id="typography">
+            <div class="section">
+                <h1>Typography</h1>
+                <h2>A subheading - scroll down</h2>
+                <p>Lorem ipsum dolor sit ament,consectetur adipiscing elit. Maecenas lectus metus, ullamcorper vehicula
+                dui ac,posuere feugiat turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Curabitur in torto ac ex convallis gravida sit amt eget
+                sem. Vivamus bibendum tincidunt risus ut ultrices. Mauris quis erat consequat, eleifend sapien ac,
+                mollis quam. Aliquam odio lectus, consequat at magna id, efficitur euismod ante. Sed ac elit vitae odio
+                tempus accumsan. Suspendisse leo ante, venenatis vel leo nec, euismod faucibus oci. In hac
+                habitasse platea dictumst. orem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lectus
+                metus, ullamcorper vehicula dui ac, posuere feugaiat turpis. Vestibulum ante ipsum primis i faucibus
+                convallis gravida sit amet eget sem. Vivamus bibendum tincidunt risus ut tltirices. Mauris quis erat
+                consequat, eleifend sapien ac, mollis quam. Aliquam odio lectus, consequat at magna id, efficitur
+                euismod faucibus orci. In has habitasse platea dictumst. orem ipsum dolor sit amet, consectetur
+                adipiscing elit. Maecenas letus metus, ullamcorper vehicula dui ac, posuere feugiat turpis. Vestibulum
+                ante ipsum primis in faucibus orci luctus et utrices posuere cubilia Curae; In hac habitasse platea
+                dictumast. Curabitur in tortor ac ex convallis gravida sit amet eget sem. Vivamus bibendum tincidunt
+                risus ut ultrices. Mauris quis erat consequat, eleifend sapien ac, mollis quam. Aliquam odio lectus,
+                consequat at magna id, efficitur euismod ante. Sed ac elit vitae odio tempus accumsan. Suspendisse
+                leo ante, venenatis vel leo nec, euisumod faucibus orci. In hac habitasse platea dictumst.orem ipsum
+                dolor sit amet, consectetur adipiscing elit. Maecenas lectus metus, ullamcorper vehicula dui ac,
+                posuere feugiat turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                Vivamus bibendum tincidunt risus utultrices. Mauris quis erat consequat, eleifend sapien ac, mollis
+                quam. Aliquam odio lectus, consequat at magna id, efficitur euismod ante. Sed ac elit vitae odio
+                tempus accumsan. Suspendisse leo ante, venenatis vel leo nec, euismod faucibus orci. In hac
+                habitasse platea dictumst.</p>
+                <h2>Another subheading</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lectus metus, ullamcorper vehicula dui ac, posuere feugiat turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Curabitur in tortor ac ex convallis gravida sit amet eget sem. Vivamus bibendum tincidunt risus ut ultrices. Mauris quis erat consequat, eleifend sapien ac, mollis quam. Aliquam odio lectus, consequat at magna id, efficitur euismod ante. Sed ac elit vitae odio tempus accumsan. Suspendisse leo ante, venenatis vel leo nec, euismod faucibus orci. In hac habitasse platea dictumst. orem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lectus metus, ullamcorper vehicula dui ac, posuere feugiat turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Curabitur in tortor ac ex convallis gravida sit amet eget sem. Vivamus bibendum tincidunt risus ut ultrices. Mauris quis erat consequat, eleifend sapien ac, mollis quam. Aliquam odio lectus, consequat at magna id, efficitur euismod ante. Sed ac elit vitae odio tempus accumsan. Suspendisse leo ante, venenatis vel leo nec, euismod faucibus orci. In hac habitasse platea dictumst.orem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lectus metus, ullamcorper vehicula dui ac, posuere feugiat turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Curabitur in tortor ac ex convallis gravida sit amet eget sem. Vivamus bibendum tincidunt risus ut ultrices. Mauris quis erat consequat, eleifend sapien ac, mollis quam. Aliquam odio lectus, consequat at magna id, efficitur euismod ante. Sed ac elit vitae odio tempus accumsan. Suspendisse leo ante, venenatis vel leo nec, euismod faucibus orci. In hac habitasse platea dictumst.orem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lectus metus, ullamcorper vehicula dui ac, posuere feugiat turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Curabitur in tortor ac ex convallis gravida sit amet eget sem. Vivamus bibendum tincidunt risus ut ultrices. Mauris quis erat consequat, eleifend sapien ac, mollis quam. Aliquam odio lectus, consequat at magna id, efficitur euismod ante. Sed ac elit vitae odio tempus accumsan. Suspendisse leo ante, venenatis vel leo nec, euismod faucibus orci. In hac habitasse platea dictumst.</p>
+                <h3>A minor heading</h3>
+                <blockquote>
+                    Within the material environment, virtual lights illuminate the scene and allow objects to cast shadows. A key light creates directional shadows, while an ambient light creates consistent, soft shadows from all angles.
+                </blockquote>
+                <cite>Google material design spec</cite>
+                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Curabitur in tortor ac ex convallis gravida sit amet eget sem. Vivamus bibendum tincidunt risus ut ultrices. Mauris quis erat consequat, eleifend sapien ac, mollis quam. Aliquam odio lectus, consequat at magna id, efficitur euismod ante. Sed ac elit vitae odio tempus accumsan. Suspendisse leo ante, venenatis vel leo nec, euismod faucibus orci. In hac habitasse platea dictumst.orem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lectus metus, ullamcorper vehicula dui ac, posuere feugiat turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst. Curabitur in tortor ac ex convallis gravida sit amet eget sem. Vivamus bibendum tincidunt risus ut ultrices. Mauris quis erat consequat, eleifend sapien ac, mollis quam. Aliquam odio lectus, consequat at magna id, efficitur euismod ante. Sed ac elit vitae odio tempus accumsan. Suspendisse leo ante, venenatis vel leo nec, euismod faucibus orci. In hac habitasse platea dictumst.</p>
+            </div>
+        </div>
+        <div class="navigation-section" id="toggles">
+            <div class="section">
+                <h1>Checkboxes</h1>
+                <div class="checkbox">
+                    <input type="checkbox" name="" id="checkbox">
+                    <label for="checkbox"></label>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" name="" id="checkbox01" checked>
+                    <label for="checkbox01"></label>
+                </div>
+            </div>
+            <div class="section">
+                <h1>Radios</h1>
+                <div class="radio">
+                    <input type="radio" name="radios" id="radio">
+                    <label for="radio"></label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="radio-demo" id="radio-checked" checked>
+                    <label for="radio-checked"></label>
+                </div>
+            </div>
+            <div class="section">
+                <h1>Switches</h1>
+                <div class="switch">
+                    <input type="checkbox" name="" id="switch">
+                    <label for="switch"></label>
+                </div>
+                <div class="switch">
+                    <input type="checkbox" name="" id="switch-checked" checked>
+                    <label for="switch-checked"></label>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-section" id="buttons">
+            <div class="section">
+                <h1>Buttons</h1>
+                <h2>Flat</h2>
+                <button class="button">Button</button>
+                <button class="button color-blue-500">Colored</button>
+                <button class="button" disabled>disabled</button>
+            </div>
+            <div class="section">
+                <h1>Raised</h1>
+                <button class="button raised">Button</button>
+                <button class="button raised bg-blue-500 color-white">Colored</button>
+                <button class="button raised" disabled>Disabled</button>
+            </div>
+            <div class="section">
+                <h1>Fab</h1>
+                <button class="fab bg-blue-500 color-white"><i class="icon-add"></i></button>
+                <button class="fab bg-red-500 color-white"><i class="icon-create"></i></button>
+                <button class="fab bg-green-500 color-white small"><i class="icon-check"></i></button>
+                <button class="fab bg-yellow-500 color-black small"><i class="icon-share"></i></button>
+            </div>
+            <div class="section">
+                <h1>Dropdown menus</h1>
+                <p>Native menu (&lt;select&gt;) : Use the dropdown-menu class on any select.</p>
+                <select name="" id="" class="dropdown-menu">
+                    <option value="">Apple</option>
+                    <option value="">Orange</option>
+                    <option value="">Pear</option>
+                </select>
+                <div class="dropdown">
+                    <button class="dropdown-menu">Apple</button>
+                    <ul class="menu">
+                        <li><a>Apple</a></li>
+                        <li><a>Orange</a></li>
+                        <li><a>Pear</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-section" id="inputs">
+            <div class="section">
+                <h1>Inputs</h1>
+                <input type="text" class="text-input" placeholder="Type something here">
+                <div class="divider"></div>
+                <textarea class="text-input" placeholder="This is a textarea"></textarea>
+                <div class="divider"></div>
+                <div class="text-input-container">
+                    <i class="icon-location text-input-icon"></i>
+                    <input type="text" class="text-input border-green-500" placeholder="Input with an icon">
+                </div>
+                <div class="divider"></div>
+                <p>You can create floating inputs by adding the <code>card</code> class to text-input-container.</p>
+                <div class="text-input-container card">
+                    <i class="icon-search text-input-icon"></i>
+                    <input type="text" class="text-input" placeholder="Search"/>
+                </div>
+            </div>
+            <div class="section">
+                <h1>Sliders</h1>
+                <input type="range" class="slider"/>
+            </div>
+        </div>
+        <div class="navigation-section" id="toolbars">
+            <div class="section">
+                <h1>Toolbars</h1>
+                <div class="toolbar bg-red-500 color-white">
+                    <button class="icon-button"><i class="icon-menu"></i></button>
+                    <span class="toolbar-label">My app</span>
+                    <span class="float-right">
+                        <button class="icon-button"><i class="icon-search"></i></button>
+                        <button class="icon-button"><i class="icon-star"></i></button>
+                    </span>
+                </div>
+            </div>
+            <div class="section">
+                <h1>Tabs</h1>
+                <ul class="toolbar tabs bg-green-500 color-white">
+                    <li ripple class="selected">Item</li>
+                    <li ripple>Item</li>
+                    <li ripple>Item</li>
+                </ul>
+                <div class="divider"></div>
+                <p>You can also add tabs to underneath a toolbar by using a toolbar-group class that contains both the tabs and the toolbar.</p>
+                <div class="toolbar-group">
+                    <div class="toolbar bg-blue-500 color-white">
+                        <button class="icon-button"><i class="icon-menu"></i></button>
+                        <span class="toolbar-label">My app</span>
+                        <span class="float-right">
+                            <button class="icon-button"><i class="icon-search"></i></button>
+                            <button class="icon-button"><i class="icon-star"></i></button>
+                        </span>
+                    </div>
+                    <ul class="toolbar tabs bg-blue-500 color-white">
+                       <li ripple class="selected">Item</li>
+                       <li ripple>Item</li>
+                       <li ripple>Item</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <h1>Navigation bars</h1>
+                <div class="navbar toolbar bg-teal-500 color-white">
+                    <div class="float-left"><a class="bold">Art site</a></div>
+                    <div class="float-right">
+                        <a ripple>Design</a>
+                        <a ripple>Photos</a>
+                        <a ripple>Wearables</a>
+                        <button class="fab bg-pink-500 color-white"><i class="icon-file-upload"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-section" id="popups">
+            <div class="section">
+                <h1>Tooltips</h1>
+                <p>Use the <code>data-tooltip</code> attribute to add a custom tooltip to any element. Note that elements using the ::before pseudo class will interfere with the tooltip.</p>
+                <button class="button color-red-500" data-tooltip="tooltip">Button with tooltip</button>
+            </div>
+            <div class="section">
+                <h1>Toasts</h1>
+                <div class="toast">
+                    <label class="toast-label">We could not load your mail</label>
+                    <button class="button flat color-yellow-500">Retry</button>
+                </div>
+                <div class="divider"></div>
+                <p>You can also add a rounded class to toasts if needed.</p>
+                <div class="toast rounded">
+                    <label class="toast-label">We could not load your mail</label>
+                    <button class="button flat color-pink-500">Retry</button>
+                </div>
+            </div>
+            <div class="section">
+                <h1>Dialogs</h1>
+                <p>Tip : initialize the <code>Dialog</code> module for quick helper functions</p>
+            </div>
+        </div>
+        <div class="navigation-section" id="lists">
+            <div class="section">
+                <h1>Lists</h1>
+                <ul class="list">
+                    <li ripple>
+                        <img src="http://nt1m.github.io/material-framework/demo-files/avatar.jpg" alt="" class="item-icon">
+                        <span class="item-text">
+                            Larry Page
+                            <span class="secondary-text">
+                                I have an action on the right
+                            </span>
+                        </span>
+                        <i class="icon-message item-action"></i>
+                    </li>
+                    <li ripple>
+                        <img src="http://nt1m.github.io/material-framework/demo-files/avatar.jpg" alt="" class="item-icon">
+                        <span class="item-text">
+                            Larry Page
+                            <span class="secondary-text">
+                                I have an action on the right
+                            </span>
+                        </span>
+                        <i class="icon-message item-action"></i>
+                    </li>
+                    <div class="divider"></div>
+                    <li ripple>
+                        <img src="http://nt1m.github.io/material-framework/demo-files/avatar.jpg" alt="" class="item-icon">
+                        <span class="item-text">
+                            Larry Page
+                            <span class="secondary-text">
+                                I have an action on the right
+                            </span>
+                        </span>
+                        <i class="icon-message item-action"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="section">
+                <h1>Grid Lists</h1>
+                <div class="grid-list">
+                    <div class="tile">
+                        <img class="tile-image" src="http://nt1m.github.io/material-framework/demo-files/avatar.jpg"/>
+                        <div class="tile-footer">
+                            <span class="item-text">
+                                Larry Page
+                                <span class="secondary-text">
+                                    I love your Material design framework !
+                                </span>
+                            </span>
+                            <i class="icon-star item-action"></i>
+                        </div>
+                    </div>
+                    <div class="tile">
+                        <img class="tile-image" src="http://nt1m.github.io/material-framework/demo-files/avatar.jpg"/>
+                        <div class="tile-footer">
+                            <span class="item-text">
+                                Larry Page
+                                <span class="secondary-text">
+                                    I love your Material design framework !
+                                </span>
+                            </span>
+                            <i class="icon-star item-action"></i>
+                        </div>
+                    </div>
+                    <div class="tile">
+                        <img class="tile-image" src="http://nt1m.github.io/material-framework/demo-files/avatar.jpg"/>
+                        <div class="tile-footer">
+                            <span class="item-text">
+                                Larry Page
+                                <span class="secondary-text">
+                                    I love your Material design framework !
+                                </span>
+                            </span>
+                            <i class="icon-star item-action"></i>
+                        </div>
+                    </div>
+                    <div class="tile">
+                        <img class="tile-image" src="http://nt1m.github.io/material-framework/demo-files/avatar.jpg"/>
+                        <div class="tile-footer">
+                            <span class="item-text">
+                                Larry Page
+                                <span class="secondary-text">
+                                    I love your Material design framework !
+                                </span>
+                            </span>
+                            <i class="icon-star item-action"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-section" id="menus">
+            <div class="section">
+                <h1>Menus</h1>
+                <ul class="menu">
+                    <li ripple><a>Open file</a></li>
+                    <li class="divider"></li>
+                    <li ripple><a>Reload file</a></li>
+                </ul>
+            </div>
+            <div class="section">
+                <h1>Sidemenus</h1>
+                <div class="sidemenu">
+                    <div class="sidemenu-hero fade">
+                        <img class="avatar" src="http://nt1m.github.io/material-framework/demo-files/avatar.jpg"/>
+                        <img class="sidemenu-hero-image" src="http://nt1m.github.io/material-framework/demo-files/sidemenu-hero.jpg"/>
+                        <span class="title">Larry Page</span>
+                        <span class="text">example@gmail.com</span>
+                    </div>
+                    <ul class="menu">
+                        <li ripple><a href="#"><i class="icon-person-add"></i>Current</a></li>
+                        <li ripple><a href="#"><i class="icon-person"></i>Recent</a></li>
+                        <li class="divider"></li>
+                        <h2 class="subheading">Subheading</h2>
+                        <li ripple><a href="#"><i class="icon-archive"></i>Archive</a></li>
+                        <li ripple><a href="#"><i class="icon-delete"></i>Trash</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="navigation" id="card">
+            <div class="section"></div>
         </div>
     </div>
 </body>
@@ -192,7 +534,7 @@ bg-red-500
 <script>
     window.addEventListener("DOMContentLoaded", function(){
         var material = new Material();
-        if (window.location.hash === "" || document.querySelector(".navigation-section " + window.location.hash) === null) {
+        if (window.location.hash === "" || document.querySelector(".navigation-section" + window.location.hash) === null) {
             window.location.hash = "#introduction";
         }
         document.querySelector("#navigation-sidemenu a[href='" + window.location.hash + "']").parentNode.className = "selected color-blue-500";
