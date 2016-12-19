@@ -24,6 +24,9 @@
         #navigation-sidemenu {
             max-width: 22em;
         }
+        #sidemenu-demo {
+            max-width: 22em;
+        }
         #navigation-sidemenu .sidemenu-hero {
             height: 70px;
         }
@@ -74,8 +77,8 @@
         }
     </style>
 </head>
-<body class="desktop">
-    <div class="sidemenu sidebar responsive" id="navigation-sidemenu">
+<body>
+    <div class="sidemenu sidebar responsive" id="navigation-sidemenu" hidden>
         <div class="sidemenu-hero">
             <img src="http://nt1m.github.io/material-framework/demo-files/sidemenu-hero.jpg" class="sidemenu-hero-image">
             <h1 class="title serif">Material Framework</h1>
@@ -101,11 +104,11 @@
     </div>
     <div class="main-content">
         <div class="toolbar bg-blue-500 color-white header">
-            <button class="icon-button" onclick="document.getElementById('navigation-sidemenu').hidden = !document.getElementById('navigation-sidemenu').hidden;"><i class="icon-menu"></i></button>
+            <button class="icon-button" onclick="SideMenu.toggle(document.getElementById('navigation-sidemenu'));"><i class="icon-menu"></i></button>
             <span class="toolbar-label">Material framework</span>
             <span class="float-right">
                 <div class="switch" id="switch-container">
-                    <input type="checkbox" name="" id="dark-theme-switch">
+                    <input type="checkbox" id="dark-theme-switch" onchange = "Theme.setTheme(this.checked ? 'dark' : 'light');">
                     <label for="dark-theme-switch"></label>
                     <label class="form-control-label">Dark</label>
                 </div>
@@ -331,6 +334,7 @@ bg-red-500
                 <input type="range" class="slider"/>
             </div>
         </div>
+        <div class="navigation-section" id="icons"></div>
         <div class="navigation-section" id="toolbars">
             <div class="section">
                 <h1>Toolbars</h1>
@@ -403,6 +407,22 @@ bg-red-500
             <div class="section">
                 <h1>Dialogs</h1>
                 <p>Tip : initialize the <code>Dialog</code> module for quick helper functions</p>
+                <button class="button color-pink-300" onclick="Dialog.show(document.querySelector('#dialog-demo'));">Open Dialog</button>
+                <button class="button color-pink-300" onclick="Dialog.show(document.querySelector('#dialog-demo'), DialogDemoCallback);">Open Dialog With Callback</button>
+            </div>
+            <div class="dialog" id="dialog-demo" hidden>
+                <h1 class="dialog-title">Hello world</h1>
+                <div class="dialog-content">
+                    <p>Dialog show</p>
+                    <p>Dialog hidden</p>
+                </div>
+                <div class="dialog-footer">
+                    <button class="button">More info</button>
+                <span class="float-right">
+                    <button class="button dialog-close">Decline</button>
+                    <button class="button color-blue-500 dialog-confirm">Accept</button>
+                </span>
+                </div>
             </div>
         </div>
         <div class="navigation-section" id="lists">
@@ -507,7 +527,10 @@ bg-red-500
             </div>
             <div class="section">
                 <h1>Sidemenus</h1>
-                <div class="sidemenu">
+                <p>Tip : initialize the <code>SideMenu</code> module to get quick helper functions.</p>
+                <p>Add the additional <code>sidebar</code> class if you want the sidemenu to persist on desktops (like the one on this page).</p>
+                <button class="button color-blue-500" onclick="SideMenu.toggle(document.querySelector('#sidemenu-demo'));">Click to see the sidemenu</button>
+                <div class="sidemenu" id="sidemenu-demo" hidden>
                     <div class="sidemenu-hero fade">
                         <img class="avatar" src="http://nt1m.github.io/material-framework/demo-files/avatar.jpg"/>
                         <img class="sidemenu-hero-image" src="http://nt1m.github.io/material-framework/demo-files/sidemenu-hero.jpg"/>
@@ -525,8 +548,32 @@ bg-red-500
                 </div>
             </div>
         </div>
-        <div class="navigation" id="card">
-            <div class="section"></div>
+        <div class="navigation-section" id="cards">
+            <div class="section">
+                <h1>Cards</h1>
+                <h2>Rich cards</h2>
+                <div class="card rich-card">
+                    <div class="card-hero" style="background-image: url('http://nt1m.github.io/material-framework/demo-files/card-hero.jpg');">
+                        <h1>Kangaroo Valley Safari</h1>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="card-footer">
+                        <button class="button flat">Share</button>
+                        <button class="button flat color-orange-500">Explore</button>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <h1>Different depths</h1>
+                <p>Use the <code>z</code> attribute to choose a depth for cards. For example, use <code>&lt;div class="card" z="1"&gt;&lt;/div&gt;</code> for a card with a z-depth of 1.</p>
+                <div class="card" z="2" style="margin-bottom: 50px; height: 100px;">z-depth: 2</div>
+                <h2>Card Containers</h2>
+                <p>Used the <code>card-container</code>class to add a background to <code>&lt;div&gt;</code>container</p>
+                <div class="card-container">
+                    <div class="card">A</div>
+                    <div class="card">B</div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
@@ -550,6 +597,10 @@ bg-red-500
             });
         }
     });
-    
+
+    var DialogDemoCallback = function(button){
+        var result = button.className.indexOf("dialog-confirm") > -1 ? "Accept" : "Decline";
+        alert( result + " was pressed.");
+    };
 </script>
 </html>

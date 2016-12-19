@@ -1,123 +1,77 @@
-"use strict";
-/* Util */
 var console = (window.console = window.console || {});
 
-function Material(params) {
+var Material = function(){
     this.initialised = false;
-    var modules = params && params.hasOwnProperty("modules") ? params.modules : null;
-    var options = params && params.hasOwnProperty("options") ? params.options : null;
-    this.init(modules, options);
-}
-Material.prototype.init = function(modules, options) {
-    if (this.initialised) return;
-    if (!modules) {
-        var modules = ["Dialog", "Responsive", "SideMenu", "Ripple", "DropdownMenu"]
-    }
+    this.init();
+};
+Material.prototype.init = function(){
+    if (this.initialised === true) return;
+    var modules = ["Responsive", "SideMenu", "Dialog", "Theme"];
     for (var i = 0, len = modules.length; i < len; i++) {
         var module = modules[i];
-        if (!window.hasOwnProperty(module) || !window[module].hasOwnProperty("init") || !window[module].isMaterialModule) {
-            console.warn("[material.init] Module not found : " + module);
-            return;
-        }
-        if (options && options[module]) {
-            window[module].init(options[module]);
-        }
-        else {
+        if (!window.hasOwnProperty(module) || !window[module].hasOwnProperty("init")
+            || !window[module].isMaterialModule ) {
+            console.log("[material.init] Module not found : " + module);
+            continue;
+        } else {
             window[module].init();
         }
     }
     this.initialised = true;
 };
 
-/* Responsive code */
 var Responsive = {
-    initialised: false,
-    isMaterialModule: true,
-    constructor: Responsive,
-    init: function() {
-        if (this.initialised) return;
-        this.onResize();
-        window.addEventListener("resize", this.onResize.bind(this));
+    initialised : false,
+    isMaterialModule : true,
+    constructor : Responsive,
+    init : function(){
+        if (this.initialised == true) return;
+        this.response();
+        window.addEventListener("resize", this.response.bind(this));
         this.initialised = true;
     },
-    onResize: function() {
-        var width     = window.innerWidth,
+    response : function(){
+        var width = window.innerWidth,
             oldDevice = this.device;
         if (width > 1000) {
             this.device = "desktop";
-        }
-        else if (width > 450) {
+        } else if (width > 450) {
             this.device = "tablet";
-        }
-        else {
+        } else {
             this.device = "phone";
         }
         document.body.classList.remove(oldDevice);
         document.body.classList.add(this.device);
     },
-    addResizeHandler: function(handler) {
+    addResponseHandler : function(handler){
         window.addEventListener("resize", handler);
-    },
-    removeResizeHandler: function(handler) {
-        window.removeEventListener("resize", handler);
     }
 };
 
-/* Theme code */
-var Theme = {
-    isMaterialModule: true,
-    toggle: function(element) {
-        var el = element || document.body;
-        if (el.classList.contains("dark-theme")) {
-            el.classList.remove("dark-theme");
-        }
-        else {
-            el.classList.add("dark-theme");
-        }
-    },
-    setTheme: function(theme, element) {
-        var el = element || document.body;
-        switch (theme) {
-            case "light":
-                el.classList.remove("dark-theme");
-                break;
-            case "dark":
-                el.classList.add("dark-theme");
-                break;
-            default:
-                console.log("[Theme.setTheme] Unknown theme : " + theme);
-                break;
-        }
-    }
-};
-
-/* SideMenu code */
 var SideMenu = {
-    initialised: false,
-    isMaterialModule: true,
-    constructor: SideMenu,
-    init: function(params) {
-        if (this.initialised) return;
+    initialised : false,
+    isMaterialModule : true,
+    constructor : SideMenu,
+    init : function(){
+        if (this.initialised === true) return;
         this.createOverlay();
-        if (params && params.overlay) {
-            this.setOverlay(params.overlay);
-        }
-        this.overlay.addEventListener("click", function() {
+        this.overlay.addEventListener("click", function(){
             var sidemenus = document.querySelectorAll(".sidemenu");
             for (var i = 0, len = sidemenus.length; i < len; i++) {
                 var sidemenu = sidemenus[i];
-                if (!sidemenu.hidden && (!sidemenu.classList.contains("sidebar") || (typeof Responsive == "undefined" || Responsive.device !== "desktop"))) {
+                if (!sidemenu.hidden && (!sidemenu.classList.contains("sidebar")
+                    || (typeof Responsive == "undefined" || Responsive.device !== "desktop"))) {
                     this.hide(sidemenu);
                 }
             }
         }.bind(this));
         if (typeof Responsive != "undefined") {
-            Responsive.addResizeHandler(this.onResize.bind(this));
+            Responsive.addResponseHandler(this.response.bind(this));
         }
-        this.onResize();
+        this.response();
         this.initialised = true;
     },
-    createOverlay: function() {
+    createOverlay : function(){
         if (document.querySelector(".sidemenu-overlay")) {
             this.overlay = document.querySelectorAll(".sidemenu-overlay")[0];
             return;
@@ -129,52 +83,51 @@ var SideMenu = {
         document.body.appendChild(overlay);
         this.overlay = overlay;
     },
-    toggle: function(sm) {
-        if (!sm.classList.contains("sidebar") || (typeof Responsive == "undefined" || Responsive.device !== "desktop")) {
-            this.overlay.hidden = !sm.hidden;
-        }
-        sm.hidden = !sm.hidden;
-    },
-    show: function(sm) {
-        if (!sm.classList.contains("sidebar") || (typeof Responsive == "undefined" || Responsive.device !== "desktop")) {
+    show : function(sm){
+        if (!sm.classList.contains("sidebar") || (typeof Responsive == "undefined" || Responsive.device !== "desktop")){
             this.overlay.hidden = false;
         }
         sm.hidden = false;
     },
-    hide: function(sm) {
+    hide : function(sm){
         this.overlay.hidden = true;
         sm.hidden = true;
     },
-    onResize: function() {
+    toggle : function(sm){
+        if (!sm.classList.contains("sidebar") || (typeof Responsive == "undefined" || Responsive.device !== "desktop")){
+            this.overlay.hidden = !sm.hidden;
+        }
+        sm.hidden = !sm.hidden;
+    },
+    response : function(){
         var sidebars = document.querySelectorAll(".sidebar");
         for (var i = 0, len = sidebars.length; i < len; i++) {
             if (Responsive.device == "desktop") {
                 this.show(sidebars[i]);
-            }
-            else {
+            } else {
                 this.hide(sidebars[i]);
             }
         }
     }
+
 };
 
-/* Dialog code */
 var Dialog = {
-    initialised: false,
-    isMaterialModule: true,
-    callback: null,
-    constructor: Dialog,
-    init: function() {
-        if (this.initialised) return;
+    initialised : false,
+    isMaterialModule : true,
+    callback : null,
+    constructor : Dialog,
+    init : function(){
+        if (this.initialised === true) return;
         this.createOverlay();
         var buttons = document.querySelectorAll(".dialog-confirm, .dialog-close");
-        for (var i = 0, len = buttons.length; i < len; i++) {
+        for (var i = 0, len = buttons.length; i < len; i++){
             buttons[i].addEventListener("click", this.hideCurrentDialog.bind(this));
         }
         this.initialised = true;
     },
-    createOverlay: function() {
-        if (document.querySelector(".dialog-overlay")) {
+    createOverlay : function(){
+        if (document.querySelector(".dialog-overlay")){
             this.overlay = document.querySelectorAll(".dialog-overlay")[0];
             return;
         }
@@ -185,23 +138,23 @@ var Dialog = {
         document.body.appendChild(overlay);
         this.overlay = overlay;
     },
-    show: function(dialog, callback) {
+    show : function(dialog, callback){
         this.overlay.hidden = false;
         dialog.hidden = false;
         if (callback) this.callback = callback;
     },
-    hide: function(dialog) {
+    hide : function(dialog){
         this.overlay.hidden = true;
         dialog.hidden = true;
     },
-    toggle: function(dialog) {
+    toggle : function(dialog){
         this.overlay.hidden = !dialog.hidden;
         dialog.hidden = !dialog.hidden;
     },
-    getCurrentDialog: function() {
+    getCurrentDialog : function(){
         return document.querySelector(".dialog:not([hidden])");
     },
-    hideCurrentDialog: function(e) {
+    hideCurrentDialog : function(e){
         this.hide(this.getCurrentDialog());
         if (this.callback) {
             this.callback(e.target);
@@ -210,7 +163,31 @@ var Dialog = {
     }
 };
 
-/* Ripple code */
+var Theme = {
+    isMaterialModule : true,
+    toggle : function(element) {
+        var el = element || document.body;
+        if (el.classList.contains("dark-theme")) {
+            el.classList.remove("dark-theme");
+        } else {
+            el.classList.add("dark-theme");
+        }
+    },
+    setTheme : function(theme, element) {
+        var el = element || document.body;
+        switch (theme) {
+            case "light" :
+                el.classList.remove("dark-theme");
+                break;
+            case "dark" :
+                el.classList.add("dark-theme");
+                break;
+            default :
+                break;
+        }
+    }
+};
+
 var Ripple = {
     isMaterialModule: true,
     initialised: false,
@@ -277,7 +254,8 @@ var DropdownMenu = {
     }
 };
 
-/* FancyHeader Experimental
+/*
+ FancyHeader Experimental
  Example usage - demo.js:
  FancyHeader.init({
  header:       document.querySelector(".toolbar"),
