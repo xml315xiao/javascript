@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Show Case</title>
+    <link rel="stylesheet" href="./css/google-fonts.css">
+    <link rel="stylesheet" href="./css/material.css">
+    <style>
+        #navigation-sidemenu {
+            max-width: 16em;
+        }
+        .header {
+            margin: 0;
+            height: auto;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 998;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidemenu sidebar response" id="navigation-sidemenu" hidden>
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#waterline">WaterLine</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="toolbar bg-blue-500 color-white header">
+            <button class="icon-button" onclick="SideMenu.toggle(document.getElementById('navigation-sidemenu'));"><i class="icon-menu"></i></button>
+        </div>
+        <div class="navigation-section" id="home"></div>
+        <div class="navigation-section" id="waterline"></div>
+    </div>
+</body>
+<script src="./js/material.js"></script>
+<script>
+    window.addEventListener("DOMContentLoaded", function(){
+        var material = new Material();
+        if (window.location.hash === "" || document.querySelector(".navigation-section" + window.location.hash) === null) {
+            window.location.hash = "#home";
+        }
+        document.querySelector("#navigation-sidemenu a[href='" + window.location.hash + "']").parentNode.className = "selected color-blue-500";
+
+        var sidemenu = document.getElementById("navigation-sidemenu"),
+                sidemenuItems = sidemenu.querySelectorAll(".menu > li:not(.divider) > a");
+        for(var i = 0, len = sidemenuItems.length; i < len; i++){
+            sidemenuItems[i].addEventListener("click", function(){
+                for(var j = 0, len = sidemenuItems.length; j < len; j++){
+                    sidemenuItems[j].parentNode.className = "";
+                }
+                this.parentNode.className = "selected color-blue-500";
+            });
+        }
+    });
+</script>
+</html>

@@ -6,7 +6,7 @@ var Material = function(){
 };
 Material.prototype.init = function(){
     if (this.initialised === true) return;
-    var modules = ["Responsive", "SideMenu", "Dialog", "Theme"];
+    var modules = ["Responsive", "SideMenu", "Dialog"];
     for (var i = 0, len = modules.length; i < len; i++) {
         var module = modules[i];
         if (!window.hasOwnProperty(module) || !window[module].hasOwnProperty("init")

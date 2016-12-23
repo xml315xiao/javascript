@@ -51,8 +51,8 @@ body div:nth-child(1) {
     height: 0;
     border-left: 1.382em solid transparent;
     border-right: 1.382em solid transparent;
-    border-top: 1em solid red;
     top: 0.65em;
+    border-top: 1em solid red;
     margin-left: 100px;
 }
 
@@ -79,11 +79,11 @@ body div:nth-child(1) {
 }
 
 .download {
-    position: relative;
     width: 1.500em;
     height: 0.500em;
     border: 0.250em solid #2C2C2C;
     border-top: none;
+    position: relative;
     margin-left: 200px;
 }
 
